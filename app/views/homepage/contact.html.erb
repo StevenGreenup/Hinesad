@@ -1,0 +1,56 @@
+<div class="contents">
+    <div class="col-sm-12">
+        <div id="map"></div>
+        <script type="text/javascript">
+            var mymap = L.map('map').setView([
+                <%= @location_latitude %>, <%= @location_longitude %>
+            ], 13);
+
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA', {
+                attribution: 'Hines Architecture + Design',
+                maxZoom: 18,
+                id: 'greenup.0m0k3acb',
+                accessToken: 'pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA'
+            }).addTo(mymap);
+
+            var LeafIcon = L.Icon.extend({
+              options: {
+
+                iconSize:     [6, 25],
+
+                iconAnchor:   [22, 24],
+
+                popupAnchor:  [-19, -30]
+              }
+            });
+
+            var greenIcon = new LeafIcon({iconUrl: '<%= image_path 'pin.png' %>'});
+            L.marker([<%= @location_latitude %>, <%= @location_longitude %>], {icon: greenIcon}).addTo(mymap).bindPopup('Hines Architecture + Design');
+        </script>
+        <br><br>
+
+
+      </div>
+      <div class="text-right">
+        <small>
+      <%= raw(@about.contact_name) %>
+      <p>
+          <%= raw(@about.contact_street) %>
+          <%= @about.contact_suite %>
+      </p>
+      <p>
+          <%= raw(@about.contact_city_state_zip) %>
+      </p>
+      <p>
+          <%= raw(@about.contact_country) %>
+      </p>
+      <p>
+          <%= raw(@about.contact_telephone) %>
+      </p>
+      <p>
+          <%= mail_to raw(@about.contact_email) %>
+      </p>
+      </small>
+
+</div>
+</div>

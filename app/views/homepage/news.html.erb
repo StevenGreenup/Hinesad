@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="contents">
+
+      <h3><p>News</p></h3>
+      <br>
+      <% @stories.each do |story| %>
+      <p>
+        <%= story.created_at %>
+      </p>
+      <%= raw(story.title) %>
+      <%= raw(story.content) %>
+      <br><hr><br>
+      <% end %>
+    </div>
+  </body>
+</html>

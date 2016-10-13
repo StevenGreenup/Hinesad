@@ -1,0 +1,421 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* @group reset */
+
+.text-right{
+  padding-right: 10px;
+}
+
+#map { height: 35vh;}
+
+.devise_container{
+  position: absolute;
+  top: 15%;
+  right: 290px;
+  width: 600px;
+  height: 600px;
+}
+
+.contacts{
+  position: absolute;
+  top: 600px;
+  right: 0px;
+  width: 100%;
+  text-align: right;
+  line-height: 1;
+
+}
+
+
+
+.logo{
+  position: absolute;
+  top: 56px;
+  left: 273px;
+    z-index: 1000;
+    .HADlogo{
+      width: 250px;
+      height: auto;
+      opacity: .6;
+      &:hover{
+        opacity: .8;
+
+      }
+    }
+}
+
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 22.8%;
+
+    top: -70px;
+    z-index: 10;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #000;
+    text-align: left;
+    text-shadow: 0 0px 0px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.carousel-indicators .active{
+    margin: 1px;
+    width: 15px;
+    height: 5px;
+    background-color: #f06667;
+    border: 1px solid #fff;
+}
+
+.carousel-indicators li{
+  display: inline-block;
+  width: 15px;
+  height: 5px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  cursor: pointer;
+  background-color: #000;
+  background-color: transparent;
+}
+
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes zoom {
+    from {
+    	-webkit-transform: scale(1,1);
+    }
+    to {
+    	-webkit-transform: scale(1.5,1.5);
+    }
+}
+
+/* Standard syntax */
+@keyframes zoom {
+   from {
+        transform: scale(1,1);
+   }
+   to {
+        transform: scale(1.5,1.5);
+   }
+}
+#carousel-example-generic{
+  height: 100%;
+}
+
+.image{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#project-image {
+    width: 100%;
+    border-bottom: 15px solid rgba(0, 0, 0, 0.03);
+    border-top: 5px solid rgba(0, 0, 0, 0.03);
+    -webkit-animation: zoom 80s ease-in-out infinite alternate;
+    -webkit-animation-delay: 10s;
+    animation: zoom 80s ease-in-out infinite alternate;
+    animation-delay: 10s;
+}
+
+#projectsimage{
+  width: 100%;
+}
+
+.modal-content{
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+}
+
+
+
+
+
+
+
+.btn-default{
+  color: #000;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+    // border-top-color: rgb(46, 109, 164);
+    // border-right-color: rgb(46, 109, 164);
+    // border-bottom-color: rgb(46, 109, 164);
+    // border-left-color: rgb(46, 109, 164);
+
+    &:hover {
+        color:#fff;
+        background-color: rgba(255, 255, 255, .1);
+        border-color: rgba(255, 255, 255, .1);
+    }
+
+    &:active{
+      color:#fff;
+      background-color: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .1);
+    }
+
+}
+
+.btn{
+  display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: right;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 0px 0px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 0px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.left{
+  position: absolute;
+  top: 50%;
+  left: -20px;
+
+}
+
+.project-left{
+  position: absolute;
+  top: 60%;
+  left: 5px;
+}
+
+.carousel-control.left {
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-repeat: repeat-x;
+}
+
+.right{
+  position: absolute;
+  top: 50%;
+  right: -40px;
+
+}
+
+.project-right{
+  position: absolute;
+  top: 60%;
+  right: -40px;
+}
+
+.carousel-control.right {
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-repeat: repeat-x;
+}
+
+
+
+html, body, div, span, applet, object, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, cite, em,  img,  strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, address {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+}
+
+html {
+ background-color: white;
+ height: 100%;
+ color: #666;
+ font-family: Helvetica, Arial, sans-serif;
+ font-size: 11px;
+ line-height: 14px;
+}
+
+body {
+ position: relative;
+ height: 100%;
+}
+
+.contents{
+  position: relative;
+  top: 200px;
+}
+
+/* ======================================
+ * 07. Preloader
+/* ====================================== */
+
+#loader {
+  background-color: #fff;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+
+}
+
+#loader .icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+}
+
+$loader-color: #f06667;
+
+
+* {box-sizing: border-box}
+
+
+
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  li {
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    margin: 30px 20px;
+    position: relative;
+    text-align: center;
+  }
+}
+
+%center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//Begin Loaders
+//Loaders are numbered by class, with relevant animations listed directly after the styling
+.load1 {
+  display: inline-block;
+  width: 75px;
+  height: 5px;
+  background: $loader-color;
+
+  transform-origin: center center;
+  animation: load1 4s ease infinite;
+  margin-top: 35px;
+}
+
+@keyframes load1 {
+  0% {
+    transform: rotate(-20deg);
+    height: 5px;
+    width: 75px;
+  }
+  5% {
+    height: 5px;
+    width: 75px;
+  }
+  30% {
+    transform: rotate(380deg);
+    height: 5px;
+    width: 75px;
+  }
+  40% {
+    transform: rotate(360deg);
+    height: 5px;
+    width: 75px;
+  }
+  55% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 5px;
+  }
+  65% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 85px;
+  }
+  68% {
+    transform: rotate(0deg);
+    height: 5px;
+  }
+  75% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 1px;
+  }
+  78% {
+    height: 5px;
+    width: 5px;
+  }
+  90% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(0deg);
+  }
+  99%, 100% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(-20deg);
+  }
+}

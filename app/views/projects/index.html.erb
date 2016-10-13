@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+
+	<body id="home">
+
+		<div id="wrapper">
+
+			<!-- HEADER -->
+			<div id="header"></div>
+			<!-- /HEADER -->
+
+			<script type="text/javascript">
+				$(function () {
+
+					//Hide some items and reveals them after 2 seconds
+
+					$("#thumb ul li a").css('opacity', 0.5);
+					$("#thumb, #thumb_nav, #infos div, #slideshow div").hide();
+
+					var thumbs = $('#thumb ul').children();
+					var max_count = thumbs.size();
+
+					var i = 1;
+					var j = 0;
+
+					setTimeout(function () {
+
+						$("#thumb").fadeIn('fast');
+						$("#infos div:nth-child(" + i + ")").fadeIn('fast');
+						$("#slideshow div:nth-child(" + i + ")").fadeIn('fast');
+						$("#thumb ul li:nth-child(" + i + ") a").addClass('activeSlide').animate({opacity: 1});
+
+						j = i;
+
+						i++;
+
+					}, 500);
+
+					// Start the loop
+					var timer = setTimeout(function () {
+						fadeIn(i, j, max_count);
+					}, 2000);
+
+					// Loop through the home page items
+					function fadeIn(i, j, max_count) {
+
+						$("#infos div:nth-child(" + j + ")").fadeOut('slow');
+						$("#infos div:nth-child(" + i + ")").fadeIn('slow');
+						$("#slideshow div:nth-child(" + j + ")").fadeOut('slow');
+						$("#slideshow div:nth-child(" + i + ")").fadeIn('slow');
+						$("#thumb ul li:nth-child(" + j + ") a").removeClass('activeSlide').animate({opacity: 0.5});
+						$("#thumb ul li:nth-child(" + i + ") a").addClass('activeSlide').animate({opacity: 1});
+
+						if (max_count == i) {
+							i = 1;
+							j = max_count;
+						} else {
+							j = i;
+							i++;
+						}
+
+						timer = setTimeout(function () {
+							fadeIn(i, j, max_count);
+						}, 10000);
+					}
+
+					$('.thumb').click(function (e) {
+						e.preventDefault();
+						clearTimeout(timer);
+
+						i = $(this).attr('id');
+
+						$('#thumb ul li a').removeClass('activeSlide').animate({opacity: 0.5});
+						$(this).addClass('activeSlide').animate({opacity: 1});
+
+						$("#infos div").fadeOut('slow');
+						$("#infos div:nth-child(" + i + ")").fadeIn('slow');
+						$("#slideshow div").fadeOut('slow');
+						$("#slideshow div:nth-child(" + i + ")").fadeIn('slow');
+
+						timer = setTimeout(function () {
+							fadeIn(i, j, max_count);
+						}, 8000);
+
+					});
+
+				});
+
+				$(window).load(function () {
+
+					var images = $('#thumb ul li').children();
+					var total_images = images.size();
+					var current_image = 0;
+					var current_thumb = 1;
+
+					if (total_images > 12) {
+						$('#thumb_nav').fadeIn();
+					}
+
+					var current_thumbs = 12;
+					var move_thumbs = 0;
+
+					$('#thumb_nav_next').click(function (e) {
+
+						if (current_thumbs < total_images) {
+							move_thumbs = move_thumbs + 660;
+							$("#thumb ul").animate({
+								left: -move_thumbs
+							}, 1000);
+							current_thumbs = current_thumbs + 12;
+						}
+					});
+
+					$('#thumb_nav_previous').click(function (e) {
+						if (current_thumbs != 12) {
+							current_thumbs = current_thumbs - 12;
+							move_thumbs = move_thumbs - 660;
+							$("#thumb ul").animate({
+								left: -move_thumbs
+							}, 1000);
+						}
+					});
+
+				});
+			</script>
+			<div id="content">
+
+				<div id="thumb">
+
+					<ul>
+						<% i = 0 %>
+						<% n = 0 %>
+						<% while n < @all_projects.count  %>
+
+						<% @all_projects.each do |project| %>
+						<% if i > 0 %>
+						<% if project.picture.present? %>
+						<li style="border-left:2px solid #f06667;">
+							<a id="<%= i+=1 %>" class="thumb" href="" >
+								<%= image_tag project.picture %>
+							</a>
+						</li>
+						<% end %>
+						<% else %>
+						<% if project.picture.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="" >
+								<%= image_tag project.picture %>
+							</a>
+						</li>
+						<% end %>
+						<% end %>
+
+						<% if project.project_picture_1.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_1 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_2.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_2 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_3.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_3 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_4.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_4 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_5.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_5 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_6.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_6 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_7.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_7 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_8.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_8 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_9.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_9 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_10.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_10 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_11.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_11 %>
+							</a>
+						</li>
+						<% end %>
+						<% if project.project_picture_12.present? %>
+						<li>
+							<a id="<%= i+=1 %>" class="thumb" href="">
+								<%= image_tag project.project_picture_12 %>
+							</a>
+						</li>
+						<% end %>
+						<% n += 1 %>
+						<% end %>
+						<% end %>
+					</ul>
+				</div>
+
+				<div id="infos">
+					<% @all_projects.each do |project| %>
+					<% i = 0 %>
+					<% if project.picture.present? %>
+					<% i +=1 %>
+					<% end %>
+					<% if project.project_picture_1.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_2.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_3.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_4.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_5.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_6.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_7.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_8.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_9.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_10.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_11.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% if project.project_picture_12.present? %>
+					<% i += 1 %>
+					<% end %>
+					<% i.times do %>
+					<div id="project-info">
+						<small>
+							<p>
+								<strong><%= raw(project.name) %></strong>
+							</p>
+							<%= raw(project.location) %>
+							<%= raw(project.status) %>
+						</small>
+
+					</div>
+					<% end %>
+					<% end %>
+				</div>
+
+				<div id="slideshow">
+					<% @all_projects.each do |project| %>
+					<% if project.picture.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.picture, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_1.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_1, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_2.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_2, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_3.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_3, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_4.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_4, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_5.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_5, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_6.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_6, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_7.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_7, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_8.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_8, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_9.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_9, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_10.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_10, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_11.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_11, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% if project.project_picture_12.present? %>
+					<div>
+						<%= link_to project_path(id: project.id) do %>
+						<%= image_tag project.project_picture_12, id:"projectsimage" %>
+						<% end %></div>
+					<% end %>
+					<% end %>
+				</div>
+
+				<div id="thumb_nav">
+					<div id="thumb_nav_previous">
+						<%= image_tag "thumbsleft.png" %></div>
+					<div id="thumb_nav_next">
+						<%= image_tag "thumbsright.png" %></div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- </WRAPPER> -->
+
+		<div id="footer">
+			<p></p>
+		</div>
+
+
+
+	</body>
+</html>

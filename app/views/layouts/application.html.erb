@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Architecture for the modern world</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+
+  </head>
+
+    <div id="loader">
+        <div class="icon">
+            <ul class="flex-container">
+                <li>
+                    <span class="load1"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <% if current_user %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+
+    <% end %>
+
+
+    <body id="home">
+      <div id="content">
+          <div id="wrapper">
+
+            <div class="logo">
+              <%= link_to root_path do %>
+              <%= image_tag "HADblack.png", class:"HADlogo" %>
+              <% end %>
+            </div>
+
+        <script>
+          $(function(){
+            $('div.menu ul li ul li a.section').click(function(e){
+              e.preventDefault();
+              $(this).next('div').slideToggle();
+              $(this).addClass('active');
+            });
+          });
+        </script>
+
+<small>
+    <div id="nav">
+
+        <div class="menu">
+            <ul>
+                <li>
+                    <%= link_to "Contact", contact_path %>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li>
+                    <%= link_to "Work", projects_path %>
+                      <% if Setting.first.categories == true %>
+                    <ul>
+                        <li>
+                            <a class="section" href="">Commercial</a>
+                            <div>
+                                <% Project.where(categories: "Commercial").each do |project| %>
+                                <p>
+                                    <a href="/projects/tour-des-pins">
+                                        <%= project.name %>
+                                    </a>
+                                </p>
+                                <% end %>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="section" href="">Education</a>
+                            <div>
+                                <% Project.where(categories: "Education").each do |project| %>
+                                <p>
+                                    <a href="/projects/tour-des-pins">
+                                        <%= project.name %>
+                                    </a>
+                                </p>
+                                <% end %>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="section" href="">Residential</a>
+                            <div>
+                                <% Project.where(categories: "Residential").each do |project| %>
+                                <p>
+                                    <a href="/projects/tour-des-pins">
+                                        <%= project.name %>
+                                    </a>
+                                </p>
+                                <% end %>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="section" href="">Hospitality</a>
+                            <div>
+                                <% Project.where(categories: "Hospitality").each do |project| %>
+                                <p>
+                                    <a href="/projects/tour-des-pins">
+                                        <%= project.name %>
+                                    </a>
+                                </p>
+                                <% end %>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="section" href="">Interiors</a>
+                            <div>
+                                <% Project.where(categories: "Interiors").each do |project| %>
+                                <p>
+                                    <a href="/projects/tour-des-pins">
+                                        <%= project.name %>
+                                    </a>
+                                </p>
+                                <% end %>
+                            </div>
+                        </li>
+                        </ul>
+                    <% else %>
+                    <%= puts Setting.first.categories %>
+                    <ul>
+                        <% Project.all.each do |project| %>
+                        <li><%= link_to raw(project.name), project_path(id: project.id) %></li>
+                        <% end %>
+                    </ul>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li>
+                    <%= link_to "Studio", about_path %>
+                    <ul>
+                        <li>
+                            <%= link_to "Biography", about_path %></li>
+                        <li>
+                            <%= link_to "News", news_path %>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</small>
+
+<!-- </WRAPPER> -->
+
+</div>
+
+<%= yield %>
+</div>
+</body>
+</html>
