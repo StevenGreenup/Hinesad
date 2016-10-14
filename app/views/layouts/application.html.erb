@@ -68,9 +68,7 @@
                             <div>
                                 <% Project.where(categories: "Commercial").each do |project| %>
                                 <p>
-                                    <a href="/projects/tour-des-pins">
-                                        <%= project.name %>
-                                    </a>
+                                    <%= link_to project.name, project_path(id: project.id) %>
                                 </p>
                                 <% end %>
                             </div>
@@ -80,9 +78,7 @@
                             <div>
                                 <% Project.where(categories: "Education").each do |project| %>
                                 <p>
-                                    <a href="/projects/tour-des-pins">
-                                        <%= project.name %>
-                                    </a>
+                                    <%= link_to project.name, project_path(id: project.id) %>
                                 </p>
                                 <% end %>
                             </div>
@@ -92,9 +88,7 @@
                             <div>
                                 <% Project.where(categories: "Residential").each do |project| %>
                                 <p>
-                                    <a href="/projects/tour-des-pins">
-                                        <%= project.name %>
-                                    </a>
+                                    <%= link_to project.name, project_path(id: project.id) %>
                                 </p>
                                 <% end %>
                             </div>
@@ -104,9 +98,7 @@
                             <div>
                                 <% Project.where(categories: "Hospitality").each do |project| %>
                                 <p>
-                                    <a href="/projects/tour-des-pins">
-                                        <%= project.name %>
-                                    </a>
+                                    <%= link_to project.name, project_path(id: project.id) %>
                                 </p>
                                 <% end %>
                             </div>
@@ -116,9 +108,7 @@
                             <div>
                                 <% Project.where(categories: "Interiors").each do |project| %>
                                 <p>
-                                    <a href="/projects/tour-des-pins">
-                                        <%= project.name %>
-                                    </a>
+                                    <%= link_to project.name, project_path(id: project.id) %>
                                 </p>
                                 <% end %>
                             </div>
@@ -128,7 +118,7 @@
                     <%= puts Setting.first.categories %>
                     <ul>
                         <% Project.all.each do |project| %>
-                        <li><%= link_to raw(project.name), project_path(id: project.id) %></li>
+                        <li><%= link_to project.name, project_path(id: project.id) %></li>
                         <% end %>
                     </ul>
                     <% end %>

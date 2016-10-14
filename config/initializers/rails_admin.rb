@@ -153,7 +153,7 @@ RailsAdmin.config do |config|
         field :project_picture_10
         field :project_picture_11
         field :project_picture_12
-        
+
         field :name do
           pretty_value do
             value.html_safe
