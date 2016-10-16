@@ -16,4 +16,4 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/config/aws.yml
+config/aws_env.yml
