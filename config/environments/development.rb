@@ -6,15 +6,6 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-        :bucket => ENV['S3_BUCKET_NAME'],
-        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-        }
-    }
-
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -62,4 +53,16 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Amazon S3 settings for Paperclip uploads
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_protocol: 'http',
+    s3_credentials: {
+      bucket: ENV.fetch("AWS_BUCKET"),
+      access_key_id: ENV.fetch("AWS_ACCESS_KEY_ID"),
+      secret_access_key: ENV.fetch("AWS_SECRET_ACCESS_KEY"),
+      s3_region: ENV.fetch("AWS_REGION"),
+    }
+  }
 end
