@@ -31,7 +31,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
-gem 'aws-sdk'
+gem 'aws-sdk-v1'
 gem 'ckeditor'
 gem 'http'
 gem 'leaflet-rails'
