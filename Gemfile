@@ -35,7 +35,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'ckeditor'
 gem 'http'
 gem 'leaflet-rails'
-gem 'figaro'
+
 
 
 # Use Capistrano for deployment
