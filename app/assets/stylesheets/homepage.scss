@@ -4,6 +4,10 @@
 
 /* @group reset */
 
+@media print {
+    .footer {page-break-after: always;}
+}
+
 .text-right{
   padding-right: 10px;
 }
