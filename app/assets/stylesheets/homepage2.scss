@@ -41,7 +41,7 @@ ol, ul {
  position: absolute;
  display:flex;
 flex-direction: row;
-flex-wrap: wrap;
+flex-wrap: nowrap;
 justify-content: space-between;
 align-content: center;
 align-items: center;
@@ -61,7 +61,7 @@ align-items: center;
 
 #nav div.menu li {
  display: block;
- min-height: 30px;
+ min-height: 100%;
  padding-left: 12px;
 }
 
