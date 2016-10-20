@@ -70,7 +70,7 @@ align-items: center;
  padding-bottom: 15px;
  width: 206px;
  min-height: 75px;
-
+z-index: 1000
 }
 
 #nav div.menu ul ul li {
@@ -484,7 +484,7 @@ a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
 
 #project_slideshow {
 
- 
+
  width: 1176px;
  height: 435px;
  background: #eee;
@@ -530,10 +530,8 @@ a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
 }
 
 #next {
-padding-right: 50px;
  width: 40px;
  height: 100%;
- background: asset-url("thumbsright.png") no-repeat;
  z-index: 2001;
 }
 
@@ -543,10 +541,8 @@ padding-right: 50px;
 }
 
 #previous {
-padding-left: 50px;
  width: 40px;
  height: 100%;
- background: asset-url("thumbsleft.png") no-repeat;
  z-index: 2000;
 }
 
@@ -574,19 +570,17 @@ padding-left: 50px;
 
 #next_project {
  position: absolute;
- top: 220px;
- right: 55px;
+ top: 195px;
+ right: 200px;
  width: 200px;
- height: 70px;
  text-align: right;
 }
 
 #previous_project {
  position: absolute;
- top: 220px;
- left: 65px;
+ top: 195px;
+ left: 200px;
  width: 200px;
- height: 70px;
 }
 
 #next_project a, #previous_project a {
