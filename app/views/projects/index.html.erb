@@ -6,7 +6,7 @@
 
 	<body id="home">
 
-	
+
 
 			<!-- HEADER -->
 			<div id="header"></div>
@@ -127,6 +127,8 @@
 				});
 			</script>
 
+			<div class="wrap-thumb">
+
 
 				<div id="thumb">
 
@@ -244,6 +246,13 @@
 					</ul>
 				</div>
 
+				<div id="thumb_nav">
+					<div id="thumb_nav_previous">
+						<%= image_tag "thumbsleft.png" %></div>
+					<div id="thumb_nav_next">
+						<%= image_tag "thumbsright.png" %></div>
+				</div>
+				</div>
 				<div id="infos">
 					<% @all_projects.each do |project| %>
 					<% i = 0 %>
@@ -384,12 +393,7 @@
 					<% end %>
 				</div>
 
-				<div id="thumb_nav">
-					<div id="thumb_nav_previous">
-						<%= image_tag "thumbsleft.png" %></div>
-					<div id="thumb_nav_next">
-						<%= image_tag "thumbsright.png" %></div>
-				</div>
+
 
 
 
