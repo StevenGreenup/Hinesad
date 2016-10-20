@@ -194,6 +194,7 @@ p {
  // position: absolute;
  // top: 35px;
  // left: 395px;
+
  width: 660px;
  height: 50px;
  overflow: hidden;
@@ -260,16 +261,23 @@ p {
  // position: absolute;
  // top: 55px;
  // right: 345px;
- height: 20px;
+ display:flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-content: center;
+align-items: center;
+ height: 100%;
  width: 25px;
+ margin-left: 25px;
 }
 
 #thumb_nav_next {
- position: absolute;
- top: 0;
- right: 0;
+ // position: absolute;
+ // top: 0;
+ // right: 0;
  width: 5px;
- height: 20px;
+ height: 100%;
  overflow: hidden;
 }
 
@@ -278,11 +286,11 @@ p {
 }
 
 #thumb_nav_previous {
- position: absolute;
- top: 0;
- left: 0;
+ // position: absolute;
+ // top: 0;
+ // left: 0;
  width: 5px;
- height: 20px;
+ height: 100%;
  overflow: hidden;
 }
 
