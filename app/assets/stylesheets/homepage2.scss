@@ -38,7 +38,7 @@ ol, ul {
 /* @group nav */
 
 #nav {
- position: absolute;
+
  display:flex;
 flex-direction: row;
 flex-wrap: nowrap;
@@ -46,9 +46,9 @@ justify-content: space-between;
 align-content: center;
 align-items: center;
 
- right: 385px;
- top: 60px;
- width: 680px;
+
+ padding-top: 60px;
+ width: 100%;
  z-index: 100;
 
 }
