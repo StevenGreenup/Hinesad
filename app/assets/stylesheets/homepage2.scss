@@ -39,9 +39,16 @@ ol, ul {
 
 #nav {
  position: absolute;
+ display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+align-content: center;
+align-items: center;
+
  right: 395px;
  top: 60px;
- width: 400px;
+ width: 660px;
  z-index: 100;
 
 }

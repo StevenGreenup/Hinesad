@@ -4,9 +4,7 @@
 
 /* @group reset */
 
-@media print {
-    .footer {page-break-after: always;}
-}
+
 
 .text-right{
   padding-right: 10px;
@@ -22,6 +20,7 @@
   height: 600px;
 }
 
+
 .contacts{
   position: absolute;
   top: 600px;
@@ -35,10 +34,6 @@
 
 
 .logo{
-  position: absolute;
-  top: 56px;
-  left: 395px;
-    z-index: 1000;
     .HADlogo{
       width: 250px;
       height: auto;

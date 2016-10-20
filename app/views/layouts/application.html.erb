@@ -30,11 +30,6 @@
       <div id="content">
           <div id="wrapper">
 
-            <div class="logo">
-              <%= link_to root_path do %>
-              <%= image_tag "HADblack.png", class:"HADlogo" %>
-              <% end %>
-            </div>
 
         <script>
           $(function(){
@@ -48,7 +43,14 @@
 
 <small>
     <div id="nav">
-
+      <div class="wrap-logo">
+        <div class="menu logo">
+          <%= link_to root_path do %>
+          <%= image_tag "HADblack.png", class:"HADlogo" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="wrap-nav">
         <div class="menu">
             <ul>
                 <li>
@@ -140,6 +142,8 @@
                 </li>
             </ul>
         </div>
+</div>
+
 
     </div>
 </small>
