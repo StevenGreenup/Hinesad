@@ -519,7 +519,7 @@ a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
   position: absolute;
   right: 0px;
  width: 40px;
- height: 100%;
+ height: 40px;
  background: asset-url("thumbsright.png") no-repeat;
  z-index: 2001;
 }
@@ -533,7 +533,7 @@ a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
   position: absolute;
   left: 20px;
  width: 40px;
- height: 100%;
+ height: 40px;
  background: asset-url("thumbsleft.png") no-repeat;
  z-index: 2000;
 }
