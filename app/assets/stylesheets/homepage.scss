@@ -6,7 +6,17 @@
 
 
 .wrap-thumb{
-  
+  display:flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ justify-content: space-between;
+ align-content: center;
+ align-items: center;
+
+
+  padding-top: 5px;
+  width: 685px;
+  margin: auto;
 }
 
 .text-right{
