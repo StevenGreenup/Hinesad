@@ -42,14 +42,16 @@
 
 
 .contacts{
-  padding-right: 50px;
+
   position: absolute;
   bottom: -145px;
   right: 0px;
   width: 100%;
   text-align: right;
   line-height: 1;
-
+.contact-text{
+  padding-right: 50px;
+}
 }
 
 
