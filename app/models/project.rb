@@ -1,7 +1,10 @@
 class Project < ApplicationRecord
 
-  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" } 
+  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+  # add a delete_<asset_name> method:
+  attr_accessor :delete_picture
+  before_validation { self.asset.clear if self.delete_asset == '1' }
 
   has_attached_file :project_picture_1, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :project_picture_1, content_type: /\Aimage\/.*\z/
