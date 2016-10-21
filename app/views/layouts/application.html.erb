@@ -160,6 +160,35 @@
 
 <%= yield %>
 </div>
+<% if current_page?(controller: 'homepage', action: 'homepage') %>
+  <hr>
+<div class="contacts">
+
+<br>
+<small>
+<p>
+<%= raw(@about.contact_name) %>
+</p>
+<p>
+<%= raw(@about.contact_street) %> <%= @about.contact_suite %>
+</p>
+<p>
+  <%= raw(@about.contact_city_state_zip) %>
+</p>
+<p>
+<%= raw(@about.contact_country) %>
+</p>
+<p>
+  <%= raw(@about.contact_telephone) %>
+</p>
+</small>
+
+<br><br>
+
+</div>
+<% else %>
+
+<% end%>
 </div>
 </body>
 </html>
