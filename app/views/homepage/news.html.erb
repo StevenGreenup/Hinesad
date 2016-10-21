@@ -10,9 +10,6 @@
       <h3><p>News</p></h3>
       <br>
       <% @stories.each do |story| %>
-      <p>
-        <%= story.created_at %>
-      </p>
       <%= raw(story.title) %>
       <%= raw(story.content) %>
       <br><hr><br>
