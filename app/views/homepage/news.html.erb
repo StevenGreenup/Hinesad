@@ -7,14 +7,27 @@
   </head>
   <body>
     <div class="contents">
-
       <h3><p>News</p></h3>
       <br>
-      <% @stories.each do |story| %>
-      <%= raw(story.title) %>
-      <%= raw(story.content) %>
-      <br><hr><br>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <% @stories.each do |story| %>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= story.id %>" aria-expanded="false" aria-controls="collapseTwo">
+                <%= raw(story.title) %>
+              </a>
+            </h4>
+          </div>
+          <div id="collapse<%= story.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <%= raw(story.content) %>
+             </div>
+          </div>
+        </div>
+        <br>
       <% end %>
+      </div>
     </div>
   </body>
 </html>
