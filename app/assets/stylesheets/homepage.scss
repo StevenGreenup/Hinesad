@@ -106,16 +106,16 @@
 }
 
 .carousel-caption {
-    position: absolute;
+    position: relative;;
 
     left: 0px;
-    top: -70px;
+    top: -600px;
     display:flex;
    flex-direction: row;
    flex-wrap: nowrap;
    justify-content: space-between;
-   align-content: center;
-   align-items: center;
+   align-content: flex-start;
+   align-items: flex-start;
     width: 660px;
     margin: auto;
     z-index: 10;
