@@ -6,6 +6,9 @@
 
 .news{
   padding: 25px;
+  span{
+    color: #999;
+  }
   &:hover{
     background-color: #f8f8f8;
     span{
