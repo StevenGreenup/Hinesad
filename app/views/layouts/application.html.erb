@@ -70,7 +70,7 @@
                     <%= link_to "Work", projects_path %>
                       <% if Setting.first.categories == true %>
                     <ul>
-                        <li>
+                        <li style="padding-left: 0px">
                             <a class="section" href="">Commercial</a>
                             <div>
                                 <% Project.where(categories: "Commercial").each do |project| %>
@@ -80,7 +80,7 @@
                                 <% end %>
                             </div>
                         </li>
-                        <li>
+                        <li style="padding-left: 0px">
                             <a class="section" href="">Education</a>
                             <div>
                                 <% Project.where(categories: "Education").each do |project| %>
@@ -90,7 +90,7 @@
                                 <% end %>
                             </div>
                         </li>
-                        <li>
+                        <li style="padding-left: 0px">
                             <a class="section" href="">Residential</a>
                             <div>
                                 <% Project.where(categories: "Residential").each do |project| %>
@@ -100,7 +100,7 @@
                                 <% end %>
                             </div>
                         </li>
-                        <li>
+                        <li style="padding-left: 0px">
                             <a class="section" href="">Hospitality</a>
                             <div>
                                 <% Project.where(categories: "Hospitality").each do |project| %>
@@ -110,7 +110,7 @@
                                 <% end %>
                             </div>
                         </li>
-                        <li>
+                        <li style="padding-left: 0px">
                             <a class="section" href="">Interiors</a>
                             <div>
                                 <% Project.where(categories: "Interiors").each do |project| %>
@@ -125,7 +125,7 @@
                     <%= puts Setting.first.categories %>
                     <ul>
                         <% Project.all.each do |project| %>
-                        <li><%= link_to project.name, project_path(id: project.id) %></li>
+                        <li style="padding-left: 0px"><%= link_to project.name, project_path(id: project.id) %></li>
                         <% end %>
                     </ul>
                     <% end %>
@@ -138,9 +138,9 @@
                 <li>
                     <%= link_to "Studio", about_path %>
                     <ul>
-                        <li>
+                        <li style="padding-left: 0px">
                             <%= link_to "Biography", about_path %></li>
-                        <li>
+                        <li style="padding-left: 0px">
                             <%= link_to "News", news_path %>
                         </li>
                     </ul>
