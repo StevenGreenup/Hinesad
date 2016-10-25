@@ -10,11 +10,15 @@
 
       <h3><p>News</p></h3>
       <br>
+
       <% @stories.each do |story| %>
-      <%= raw(story.title) %>
+      <div class="news">
+      <span><strong><%= story.title %></strong></span>
       <%= raw(story.content) %>
-      <br><hr><br>
+      </div>
+      <hr>
       <% end %>
+
     </div>
   </body>
 </html>

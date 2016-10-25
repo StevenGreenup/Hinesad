@@ -282,7 +282,7 @@ RailsAdmin.config do |config|
 
     config.model 'Story' do
       edit do
-        field :title, :ck_editor
+        field :title
         field :content, :ck_editor
       end
       list do

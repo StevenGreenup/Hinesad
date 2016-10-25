@@ -4,6 +4,16 @@
 
 /* @group reset */
 
+.news{
+  padding: 25px;
+  &:hover{
+    background-color: #f8f8f8;
+    span{
+      color:#f06667;
+    }
+  }
+}
+
 .wrap-project{
   position: relative;
   top: 125px;
