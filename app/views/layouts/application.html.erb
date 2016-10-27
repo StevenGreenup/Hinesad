@@ -160,8 +160,8 @@
 
 <%= yield %>
 </div>
-<% if false %>
-<% if current_page?(controller: 'homepage', action: 'homepage') %>
+
+<% if current_page?(controller: '/homepage', action: 'homepage') %>
 
 <div class="contacts">
   <hr>
@@ -192,7 +192,7 @@
 </div>
 <% else %>
 
-<% end%>
+
 <% end %>
 </div>
 </body>
