@@ -22,8 +22,11 @@ class HomepageController < ApplicationController
     results = JSON.parse(response.body)
     if results.nil?
     else
-      @location_latitude = results.first["lat"]
-      @location_longitude = results.first["lon"]
+      @location_latitude = 29.738819
+      # results.first["lat"]
+      @location_longitude = -95.473714
+      # results.first["lon"]
+
     end
   end
   end

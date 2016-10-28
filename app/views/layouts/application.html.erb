@@ -159,41 +159,39 @@
 
 
 <%= yield %>
-</div>
+    </div>
 
-<% if current_page?(controller: '/homepage', action: 'homepage') %>
+    <% if current_page?(controller: '/homepage', action: 'homepage') %>
 
-<div class="contacts">
-  <hr>
-<div class="contact-text">
+    <div class="contacts">
+    <hr>
+    <div class="contact-text">
 
+        <br>
+        <small>
+            <p>
+                <%= raw(@about.contact_name) %>
+            </p>
+            <p>
+                <%= raw(@about.contact_street) %>
+                <%= @about.contact_suite %>
+            </p>
+            <p>
+                <%= raw(@about.contact_city_state_zip) %>
+            </p>
+            <p>
+                <%= raw(@about.contact_country) %>
+            </p>
+            <p>
+                <%= raw(@about.contact_telephone) %>
+            </p>
+        </small>
 
-<br>
-<small>
-<p>
-<%= raw(@about.contact_name) %>
-</p>
-<p>
-<%= raw(@about.contact_street) %> <%= @about.contact_suite %>
-</p>
-<p>
-  <%= raw(@about.contact_city_state_zip) %>
-</p>
-<p>
-<%= raw(@about.contact_country) %>
-</p>
-<p>
-  <%= raw(@about.contact_telephone) %>
-</p>
-</small>
-
-<br><br>
-</div>
-</div>
-<% else %>
-
-
-<% end %>
+        <br><br>
+    </div>
+    </div>
+    <% else %>
+    <% end %>
 </div>
 </body>
 </html>
