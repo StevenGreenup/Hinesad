@@ -23,8 +23,10 @@ class HomepageController < ApplicationController
     if results.nil?
     else
       @location_latitude = 29.738819
+      #customer didn't like the accuracy, but the feature is there.
       # results.first["lat"]
       @location_longitude = -95.473714
+      #customer didn't like the accuracy, but the feature is there.
       # results.first["lon"]
 
     end
