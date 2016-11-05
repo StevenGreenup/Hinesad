@@ -37,6 +37,7 @@ gem 'http'
 gem 'leaflet-rails'
 
 group :development do
+  gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
@@ -44,8 +45,7 @@ group :development do
   gem 'capistrano-rvm'
 end
 
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -7,7 +7,12 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-server 'ec2-35-162-53-36.us-west-2.compute.amazonaws.com', user: 'deploy', roles: %w{app db web}
+
+server '35.161.146.155', user: 'deploy', roles: %w{web app db}
+set :ssh_options, {
+  verbose: :debug
+}
+
 
 # role-based syntax
 # ==================
@@ -41,11 +46,11 @@ server 'ec2-35-162-53-36.us-west-2.compute.amazonaws.com', user: 'deploy', roles
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+ # set :ssh_options, {
+ #   keys: %w(/home/ubuntu/.ssh/id_rsa),
+ #   forward_agent: false,
+ #   auth_methods: %w(password)
+ # }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
