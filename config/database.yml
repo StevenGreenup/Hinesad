@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: contactbook
+  database: contactbook_production
   username: contactbook
   password: <%= ENV['HINESAD_DATABASE_PASSWORD'] %>
