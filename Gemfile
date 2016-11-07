@@ -35,6 +35,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'ckeditor'
 gem 'http'
 gem 'leaflet-rails'
+gem 'figaro'
 
 group :development do
   gem 'capistrano-ssh-doctor', '~> 1.0'
