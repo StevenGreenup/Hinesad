@@ -92,7 +92,7 @@ Rails.application.configure do
     :s3_host_name => "s3-us-west-2.amazonaws.com",
     :s3_region => "us-west-2",
     :s3_credentials => {
-      :bucket => Figaro.env.S3_BUCKET_NAME,
+      :bucket => "projects-hinesad",
       :access_key_id => Figaro.env.AWS_ACCESS_KEY_ID,
       :secret_access_key => Figaro.env.AWS_SECRET_ACCESS_KEY,
     }
