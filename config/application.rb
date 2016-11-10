@@ -14,6 +14,5 @@ module Hinesad
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    Figaro.load
   end
 end
