@@ -88,7 +88,6 @@ Rails.application.configure do
 
   # config/environments/production.rb
   config.paperclip_defaults = {
-    Figaro.load
     :storage => :s3,
     :s3_host_name => "s3-us-west-2.amazonaws.com",
     :s3_region => "us-west-2",
