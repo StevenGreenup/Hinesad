@@ -107,8 +107,9 @@
 
 .carousel-caption {
     position: absolute;
-    left: 22.8%;
-
+    // left: 22.8%;
+    width: 660px;
+    margin: auto;
     top: -70px;
     z-index: 10;
     padding-top: 0px;
@@ -121,7 +122,6 @@
 .carousel-inner {
     position: relative;
     overflow: visible;
-    width: 100%;
 }
 
 .carousel-indicators {
