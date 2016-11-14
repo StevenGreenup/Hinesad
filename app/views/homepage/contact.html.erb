@@ -1,48 +1,47 @@
 <div class="contents">
-    <div class="col-sm-12">
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <div class="col-sm-12">
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-87250909-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-87250909-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
-        <div id="map"></div>
-        <script type="text/javascript">
-            var mymap = L.map('map').setView([
-                <%= @location_latitude %>, <%= @location_longitude %>
-            ], 13);
+    </script>
+    <div id="map"></div>
+    <script type="text/javascript">
+    var mymap = L.map('map').setView([
+    <%= @location_latitude %>, <%= @location_longitude %>
+    ], 13);
 
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA', {
-                attribution: 'Hines Architecture + Design',
-                maxZoom: 18,
-                id: 'greenup.0m0k3acb',
-                accessToken: 'pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA'
-            }).addTo(mymap);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA', {
+    attribution: 'Hines Architecture + Design',
+    maxZoom: 18,
+    id: 'greenup.0m0k3acb',
+    accessToken: 'pk.eyJ1IjoiZ3JlZW51cCIsImEiOiJjaXFudW4wNjcwMWQ1Zm9ubjQ0eHB6ejU5In0.8U3wnPsvgv9fAV4VnC2apA'
+    }).addTo(mymap);
 
-            var LeafIcon = L.Icon.extend({
-              options: {
+    var LeafIcon = L.Icon.extend({
+    options: {
 
-                iconSize:     [6, 25],
+    iconSize:     [6, 25],
 
-                iconAnchor:   [22, 24],
+    iconAnchor:   [22, 24],
 
-                popupAnchor:  [-19, -30]
-              }
-            });
+    popupAnchor:  [-19, -30]
+    }
+    });
 
-            var greenIcon = new LeafIcon({iconUrl: '<%= image_path 'pin.png' %>'});
-            L.marker([<%= @location_latitude %>, <%= @location_longitude %>], {icon: greenIcon}).addTo(mymap).bindPopup('Hines Architecture + Design');
-        </script>
-        <br><br>
+    var greenIcon = new LeafIcon({iconUrl: '<%= image_path 'pin.png' %>'});
+    L.marker([<%= @location_latitude %>, <%= @location_longitude %>], {icon: greenIcon}).addTo(mymap).bindPopup('Hines Architecture + Design');
+    </script>
+<br><br>
 
-
-      </div>
-      <div class="text-right">
-        <small>
+</div>
+  <div class="text-right">
+  <small>
       <%= raw(@about.contact_name) %>
       <p>
           <%= raw(@about.contact_street) %>
@@ -60,7 +59,7 @@
       <p>
           <%= mail_to raw(@about.contact_email) %>
       </p>
-      </small>
+  </small>
 
-</div>
+  </div>
 </div>
