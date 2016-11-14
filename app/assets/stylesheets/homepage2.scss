@@ -162,7 +162,9 @@ p {
 #project-info {
  position: absolute;
  top: 125px;
- left: 395px;
+ width: 660px;
+ text-align: left;
+ margin: auto;
 }
 
 #slideshow {
@@ -564,6 +566,10 @@ a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
  margin-left: 6px;
 }
 
+#infos{
+  width: 660px;
+  margin: auto;
+}
 
 
 #next_project {
